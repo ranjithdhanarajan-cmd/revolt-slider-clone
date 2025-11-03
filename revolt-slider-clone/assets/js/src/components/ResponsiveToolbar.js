@@ -1,30 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const devices = [
-    { id: 'desktop', label: 'Desktop' },
-    { id: 'tablet', label: 'Tablet' },
-    { id: 'mobile', label: 'Mobile' },
-];
-
-const ResponsiveToolbar = ({ activeDevice, onChange }) => (
-    <div className="revolt-responsive-toolbar">
-        {devices.map((device) => (
-            <button
-                key={device.id}
-                type="button"
-                className={device.id === activeDevice ? 'is-active' : ''}
-                onClick={() => onChange(device.id)}
-            >
-                {device.label}
-            </button>
-        ))}
-    </div>
-);
-
-ResponsiveToolbar.propTypes = {
-    activeDevice: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
+const ModuleList = ({ modules = [] }) => {
+    return (
+        <div className="revolt-module-list">
+            <header className="revolt-module-list__header">
+                <h1>Revolt Modules</h1>
+                <p>Create, manage, and edit slider modules.</p>
+            </header>
+            {modules.length === 0 ? (
+                <div className="revolt-empty">
+                    <p>No modules yet. Use the "Create Module" button in the editor.</p>
+                </div>
+            ) : (
+                <ul>
+                    {modules.map((module) => (
+                        <li key={module.id}>
+                            <strong>{module.title}</strong> <em>{module.type}</em>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
 };
 
-export default ResponsiveToolbar;
+ModuleList.propTypes = {
+    modules: PropTypes.array,
+};
+
+export default ModuleList;
