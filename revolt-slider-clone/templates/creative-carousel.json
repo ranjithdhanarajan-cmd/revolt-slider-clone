@@ -1,0 +1,113 @@
+"title": "Creative Portfolio Carousel",
+  "type": "carousel",
+  "settings": {
+    "width": 1200,
+    "height": 520,
+    "autoplay": true,
+    "delay": 4500,
+    "loop": true,
+    "navigation": {
+      "arrows": true,
+      "bullets": true,
+      "thumbnails": true
+    },
+    "responsive": {
+      "desktop": { "width": 1200, "height": 520 },
+      "tablet": { "width": 960, "height": 460 },
+      "mobile": { "width": 720, "height": 400 }
+    }
+  },
+  "slides": [
+    {
+      "id": "carousel-slide-1",
+      "background": { "color": "#151515" },
+      "layers": [
+        {
+          "id": "carousel-image-1",
+          "type": "image",
+          "content": {
+            "src": "https://example.com/portfolio/project-1.jpg",
+            "alt": "Project 1"
+          },
+          "style": { "top": 60, "left": 120, "width": 360, "height": 320 },
+          "animations": [
+            {
+              "id": "anim-carousel-image-1",
+              "type": "fadeIn",
+              "start": 0,
+              "duration": 600,
+              "from": { "opacity": 0 },
+              "to": { "opacity": 1 }
+            }
+          ]
+        },
+        {
+          "id": "carousel-title-1",
+          "type": "text",
+          "content": { "text": "Immersive Gallery" },
+          "style": { "top": 80, "left": 520, "fontSize": "48px", "color": "#ffffff" }
+        },
+        {
+          "id": "carousel-desc-1",
+          "type": "text",
+          "content": { "text": "Highlight your best work with smooth parallax-driven slides." },
+          "style": { "top": 160, "left": 520, "width": 400, "color": "#cccccc" }
+        }
+      ]
+    },
+    {
+      "id": "carousel-slide-2",
+      "background": { "color": "#0e1d2f" },
+      "layers": [
+        {
+          "id": "carousel-image-2",
+          "type": "image",
+          "content": {
+            "src": "https://example.com/portfolio/project-2.jpg",
+            "alt": "Project 2"
+          },
+          "style": { "top": 70, "left": 140, "width": 340, "height": 300 }
+        },
+        {
+          "id": "carousel-title-2",
+          "type": "text",
+          "content": { "text": "Storytelling Layouts" },
+          "style": { "top": 90, "left": 520, "fontSize": "44px", "color": "#ffffff" }
+        },
+        {
+          "id": "carousel-desc-2",
+          "type": "text",
+          "content": { "text": "Layer timelines reveal elements as visitors explore." },
+          "style": { "top": 170, "left": 520, "width": 420, "color": "#d7e1ff" }
+        }
+      ]
+    },
+    {
+      "id": "carousel-slide-3",
+      "background": { "color": "#1b1026" },
+      "layers": [
+        {
+          "id": "carousel-image-3",
+          "type": "image",
+          "content": {
+            "src": "https://example.com/portfolio/project-3.jpg",
+            "alt": "Project 3"
+          },
+          "style": { "top": 70, "left": 140, "width": 340, "height": 300 }
+        },
+        {
+          "id": "carousel-title-3",
+          "type": "text",
+          "content": { "text": "Dynamic Layers" },
+          "style": { "top": 90, "left": 520, "fontSize": "44px", "color": "#ffffff" }
+        },
+        {
+          "id": "carousel-desc-3",
+          "type": "text",
+          "content": { "text": "Combine text, imagery, video, and effects for immersive storytelling." },
+          "style": { "top": 170, "left": 520, "width": 420, "color": "#f6d9ff" }
+        }
+      ]
+    }
+  ]
+}
