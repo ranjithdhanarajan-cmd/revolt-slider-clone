@@ -9,6 +9,7 @@ namespace Revolt\Admin;
 
 use Revolt\Addons\Manager as AddonsManager;
 use Revolt\Schema\Module_Schema;
+use Revolt\Settings\Options;
 
 /**
  * Handles rendering and assets for the admin SPA.
@@ -87,6 +88,8 @@ class Editor {
                 'templates' => self::get_templates(),
                 'addons'    => AddonsManager::get_registered_addons(),
                 'modules'   => self::get_modules_summary(),
+                'settings'  => Options::get_settings(),
+                'adminUrls' => self::get_admin_urls(),
                 'i18n'      => [
                     'createModule' => __( 'Create Module', 'revolt-slider-clone' ),
                     'noModules'    => __( 'No modules yet. Create your first one!', 'revolt-slider-clone' ),
@@ -149,5 +152,21 @@ class Editor {
             },
             $posts
         );
+    }
+
+    /**
+     * Helper for commonly used admin URLs.
+     *
+     * @return array<string,string>
+     */
+    protected static function get_admin_urls() {
+        return [
+            'modulesList' => admin_url( 'admin.php?page=revolt-slider-clone' ),
+            'newModule'   => admin_url( 'post-new.php?post_type=revolt_module' ),
+            'templates'   => admin_url( 'admin.php?page=revolt-slider-templates' ),
+            'addons'      => admin_url( 'admin.php?page=revolt-slider-addons' ),
+            'settings'    => admin_url( 'admin.php?page=revolt-slider-settings' ),
+            'editModule'  => admin_url( 'post.php' ),
+        ];
     }
 }
