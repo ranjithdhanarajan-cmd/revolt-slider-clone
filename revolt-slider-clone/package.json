@@ -1,0 +1,26 @@
+{
+  "name": "revolt-slider-clone",
+  "version": "0.1.0",
+  "description": "WordPress plugin editor assets for Revolt Slider Clone",
+  "scripts": {
+    "start": "webpack --watch --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js"
+  },
+  "dependencies": {
+    "@wordpress/components": "^23.0.0",
+    "@wordpress/data": "^10.0.0",
+    "@wordpress/element": "^4.0.0",
+    "@wordpress/i18n": "^4.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "@babel/preset-react": "^7.22.0",
+    "babel-loader": "^9.1.2",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
