@@ -1,4 +1,178 @@
-/* Admin styles placeholder */
-.revolt-app {
-    min-height: 600px;
+.revolt-admin-shell {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    margin: 24px auto;
+    max-width: 1100px;
+    padding: 24px 28px;
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.2);
+}
+
+.revolt-admin-shell__header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.revolt-admin-shell__header p {
+    margin: 6px 0 0;
+    color: #50575e;
+    max-width: 640px;
+}
+
+.revolt-admin-shell__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 20px;
+}
+
+.revolt-card-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: 16px;
+}
+
+.revolt-card {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.revolt-card__header {
+    padding: 18px 20px 12px;
+    border-bottom: 1px solid #f0f0f1;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.revolt-card__header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.revolt-card__badge {
+    background: #2271b1;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    text-transform: capitalize;
+}
+
+.revolt-card__body {
+    padding: 16px 20px;
+    flex: 1;
+}
+
+.revolt-card__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.revolt-card__media {
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.revolt-card__media--placeholder {
+    background: #f6f7f7;
+    color: #646970;
+    font-size: 0.9rem;
+    padding: 48px 16px;
+    text-align: center;
+}
+
+.revolt-card__meta {
+    color: #50575e;
+    font-size: 0.9rem;
+    margin: 0 0 8px;
+}
+
+.revolt-card__footer {
+    padding: 16px 20px;
+    border-top: 1px solid #f0f0f1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.revolt-card__footer .button-link {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.revolt-card__footer .button-link:hover {
+    text-decoration: underline;
+}
+
+.revolt-empty-state {
+    background: #f6f7f7;
+    border: 1px dashed #c3c4c7;
+    border-radius: 6px;
+    margin-top: 24px;
+    padding: 32px;
+    text-align: center;
+}
+
+.revolt-empty-state p {
+    margin: 0 0 18px;
+    font-size: 1rem;
+}
+
+.revolt-settings-form {
+    margin-top: 24px;
+    display: grid;
+    gap: 28px;
+}
+
+.revolt-settings-group h2 {
+    margin: 0 0 12px;
+}
+
+.revolt-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    gap: 6px;
+    font-size: 0.95rem;
+}
+
+.revolt-control input[type="checkbox"] {
+    align-self: flex-start;
+}
+
+.revolt-control-row {
+    display: grid;
+    gap: 16px;
+}
+
+@media (min-width: 600px) {
+    .revolt-control-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.revolt-control__label {
+    font-weight: 600;
+}
+
+.revolt-control__help {
+    color: #646970;
+    font-size: 0.85rem;
+}
+
+.revolt-settings-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.notice {
+    margin: 0;
 }
