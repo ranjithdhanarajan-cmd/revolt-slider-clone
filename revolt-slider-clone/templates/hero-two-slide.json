@@ -1,0 +1,179 @@
+{
+  "title": "Hero - Dual Slide Showcase",
+  "type": "hero",
+  "settings": {
+    "width": 1400,
+    "height": 680,
+    "autoplay": true,
+    "delay": 6000,
+    "loop": true,
+    "navigation": {
+      "arrows": true,
+      "bullets": false,
+      "thumbnails": false
+    },
+    "responsive": {
+      "desktop": { "width": 1400, "height": 680 },
+      "tablet": { "width": 992, "height": 520 },
+      "mobile": { "width": 768, "height": 460 }
+    }
+  },
+  "slides": [
+    {
+      "id": "hero-slide-1",
+      "background": {
+        "image": "https://example.com/images/hero-slide-1.jpg",
+        "color": "#0a0a0a"
+      },
+      "layers": [
+        {
+          "id": "hero-heading-1",
+          "type": "text",
+          "content": { "text": "Empower Your Brand" },
+          "style": {
+            "top": 180,
+            "left": 120,
+            "fontSize": "64px",
+            "color": "#ffffff"
+          },
+          "animations": [
+            {
+              "id": "anim-hero-heading-1",
+              "type": "fadeInUp",
+              "start": 0,
+              "duration": 800,
+              "easing": "easeOutQuart",
+              "from": { "opacity": 0, "y": 60 },
+              "to": { "opacity": 1, "y": 0 }
+            }
+          ],
+          "responsive": {
+            "tablet": { "fontSize": "48px", "top": 140, "left": 80 },
+            "mobile": { "fontSize": "36px", "top": 120, "left": 40 }
+          }
+        },
+        {
+          "id": "hero-subheading-1",
+          "type": "text",
+          "content": { "text": "Design breathtaking experiences with Revolt Slider." },
+          "style": {
+            "top": 280,
+            "left": 120,
+            "width": 520,
+            "fontSize": "20px",
+            "color": "#f1f1f1"
+          },
+          "animations": [
+            {
+              "id": "anim-hero-subheading-1",
+              "type": "fadeIn",
+              "start": 200,
+              "duration": 600,
+              "easing": "easeOutQuad",
+              "from": { "opacity": 0 },
+              "to": { "opacity": 1 }
+            }
+          ]
+        },
+        {
+          "id": "hero-button-1",
+          "type": "button",
+          "content": { "text": "Launch Editor", "url": "#" },
+          "style": {
+            "top": 360,
+            "left": 120,
+            "padding": "18px 34px",
+            "className": "revolt-btn revolt-btn--primary"
+          },
+          "animations": [
+            {
+              "id": "anim-hero-button-1",
+              "type": "fadeIn",
+              "start": 400,
+              "duration": 500,
+              "easing": "easeOutQuad",
+              "from": { "opacity": 0 },
+              "to": { "opacity": 1 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hero-slide-2",
+      "background": {
+        "image": "https://example.com/images/hero-slide-2.jpg",
+        "color": "#050f1a"
+      },
+      "layers": [
+        {
+          "id": "hero-heading-2",
+          "type": "text",
+          "content": { "text": "Motion that Inspires" },
+          "style": {
+            "top": 200,
+            "left": 720,
+            "fontSize": "58px",
+            "color": "#ffffff"
+          },
+          "animations": [
+            {
+              "id": "anim-hero-heading-2",
+              "type": "fadeInUp",
+              "start": 0,
+              "duration": 820,
+              "easing": "easeOutQuart",
+              "from": { "opacity": 0, "y": 40 },
+              "to": { "opacity": 1, "y": 0 }
+            }
+          ]
+        },
+        {
+          "id": "hero-media-2",
+          "type": "image",
+          "content": {
+            "src": "https://example.com/images/hero-device.png",
+            "alt": "Device mockup"
+          },
+          "style": {
+            "top": 120,
+            "left": 120,
+            "width": 480
+          },
+          "animations": [
+            {
+              "id": "anim-hero-media-2",
+              "type": "fadeIn",
+              "start": 100,
+              "duration": 700,
+              "easing": "easeOutQuad",
+              "from": { "opacity": 0 },
+              "to": { "opacity": 1 }
+            }
+          ]
+        },
+        {
+          "id": "hero-button-2",
+          "type": "button",
+          "content": { "text": "View Templates", "url": "#" },
+          "style": {
+            "top": 380,
+            "left": 720,
+            "className": "revolt-btn revolt-btn--ghost"
+          },
+          "animations": [
+            {
+              "id": "anim-hero-button-2",
+              "type": "fadeIn",
+              "start": 420,
+              "duration": 520,
+              "easing": "easeOutQuad",
+              "from": { "opacity": 0 },
+              "to": { "opacity": 1 }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
