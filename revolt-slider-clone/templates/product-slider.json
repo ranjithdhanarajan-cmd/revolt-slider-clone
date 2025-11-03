@@ -1,0 +1,115 @@
+{
+  "title": "Product Launch Slider",
+  "type": "slider",
+  "settings": {
+    "width": 1280,
+    "height": 600,
+    "autoplay": false,
+    "delay": 8000,
+    "loop": false,
+    "navigation": {
+      "arrows": true,
+      "bullets": true,
+      "thumbnails": false
+    },
+    "responsive": {
+      "desktop": { "width": 1280, "height": 600 },
+      "tablet": { "width": 992, "height": 520 },
+      "mobile": { "width": 768, "height": 480 }
+    }
+  },
+  "slides": [
+    {
+      "id": "product-slide-1",
+      "background": {
+        "image": "https://example.com/products/product-hero.jpg"
+      },
+      "layers": [
+        {
+          "id": "product-badge-1",
+          "type": "text",
+          "content": { "text": "New" },
+          "style": {
+            "top": 100,
+            "left": 120,
+            "padding": "8px 18px",
+            "className": "revolt-badge"
+          }
+        },
+        {
+          "id": "product-title-1",
+          "type": "text",
+          "content": { "text": "Aurora Headphones" },
+          "style": {
+            "top": 160,
+            "left": 120,
+            "fontSize": "54px",
+            "color": "#ffffff"
+          },
+          "animations": [
+            {
+              "id": "anim-product-title-1",
+              "type": "fadeIn",
+              "start": 0,
+              "duration": 700,
+              "from": { "opacity": 0 },
+              "to": { "opacity": 1 }
+            }
+          ]
+        },
+        {
+          "id": "product-price-1",
+          "type": "text",
+          "content": { "text": "$249" },
+          "style": {
+            "top": 240,
+            "left": 120,
+            "fontSize": "32px",
+            "color": "#ffe066"
+          }
+        },
+        {
+          "id": "product-button-1",
+          "type": "button",
+          "content": { "text": "Pre-order", "url": "#" },
+          "style": {
+            "top": 320,
+            "left": 120,
+            "className": "revolt-btn revolt-btn--accent"
+          }
+        }
+      ]
+    },
+    {
+      "id": "product-slide-2",
+      "background": {
+        "color": "#050505"
+      },
+      "layers": [
+        {
+          "id": "product-video-2",
+          "type": "video",
+          "content": { "src": "https://example.com/videos/product-showcase.mp4" },
+          "style": {
+            "top": 80,
+            "left": 120,
+            "width": 560,
+            "height": 320
+          }
+        },
+        {
+          "id": "product-description-2",
+          "type": "text",
+          "content": { "text": "Spatial audio, adaptive noise cancelling, and 24-hour battery life." },
+          "style": {
+            "top": 120,
+            "left": 720,
+            "width": 420,
+            "fontSize": "22px",
+            "color": "#f5f5f5"
+          }
+        }
+      ]
+    }
+  ]
+}
