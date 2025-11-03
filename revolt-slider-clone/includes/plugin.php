@@ -11,6 +11,7 @@ use Revolt\Admin\Editor;
 use Revolt\Addons\Manager as AddonsManager;
 use Revolt\Frontend\Renderer;
 use Revolt\Rest\Modules_Controller;
+use Revolt\Rest\Settings_Controller;
 
 /**
  * Class Plugin
@@ -47,6 +48,7 @@ class Plugin {
 
         // Register REST routes on rest_api_init.
         add_action( 'rest_api_init', [ Modules_Controller::class, 'register_routes' ] );
+        add_action( 'rest_api_init', [ Settings_Controller::class, 'register_routes' ] );
 
         // Register default add-ons immediately to expose add-on data.
         AddonsManager::bootstrap();
