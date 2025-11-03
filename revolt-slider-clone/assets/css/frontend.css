@@ -1,0 +1,30 @@
+/* Front-end styles placeholder */
+.revolt-module {
+    position: relative;
+    overflow: hidden;
+}
+
+.revolt-module__viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.revolt-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.revolt-slide__layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.revolt-layer {
+    position: absolute;
+    will-change: transform, opacity;
+}
