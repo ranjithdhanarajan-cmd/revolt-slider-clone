@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Slider Revolution
-Plugin URI: https://www.sliderrevolution.com/?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info
-Description: Slider Revolution - More than just a WordPress Slider
-Author: ThemePunch
+Plugin Name: zSlider Revolutioon 
+Plugin URI: https://www.sliderrevolutionss.com/?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info
+Description: our zSlider Revolutioon - More than just a WordPress Slider
+Author: Themes
 Text Domain: revslider
 Domain Path: /languages
 Version: 6.7.38
-Author URI: https://themepunch.com/?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info
+Author URI: https:// www.sliderrevolutionss.com /?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info
 */
 
 // If this file is called directly, abort.
